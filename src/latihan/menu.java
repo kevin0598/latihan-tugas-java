@@ -28,11 +28,11 @@ public class menu implements receipt {
 			{"5","Minuman","Air Putih","3000"}};
 	
 	String list3[][]= {
-			{"1","Paket A","Nasi Goreng+Jus Jeruk","20000"},
-			{"2","Paket B","Mie Goreng+Jus Melon","20000"},
-			{"3","Paket C","Capjay Goreng+Es Teh","17000"},
-			{"4","Paket D","Ayam Goreng+Jus Alpukat","20000"},
-			{"5","Paket E","Ikan Goreng+Air Putih","15000"}};
+			{"1","Paket A","Nasi Goreng + Jus Jeruk","20000"},
+			{"2","Paket B","Mie Goreng + Jus Melon","20000"},
+			{"3","Paket C","Capjay Goreng + Es Teh","17000"},
+			{"4","Paket D","Ayam Goreng + Jus Alpukat","20000"},
+			{"5","Paket E","Ikan Goreng + Air Putih","15000"}};
 	
 	ArrayList<menu> pilihan = new ArrayList<menu>();
 	
@@ -108,7 +108,7 @@ public class menu implements receipt {
 			pilih=scan.nextInt()-1;		
 			harga=Integer.valueOf(list3[pilih][3]);		
 			for (int j = 0; j < list3[pilih].length; j++) {
-				nama=list3[pilih][2];
+				nama=list3[pilih][1]+" - "+list3[pilih][2];
 				harga2=list3[pilih][3];			
 			}				
 			System.out.print("Jumlah Pesanan = ");
