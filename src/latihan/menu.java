@@ -49,10 +49,10 @@ public class menu implements receipt {
 		}
 	}
 
-	public void addFood() {
-		int idn = -1;
+	public void addFood() {		
 		String pesanan = "";
 		do {
+			int idn = -1;
 			printArray(list);
 			System.out.print("Pesan Makanan Nomor = ");
 			pilih = scan.nextInt() - 1;
@@ -70,7 +70,7 @@ public class menu implements receipt {
 			} else {
 				for (int i = 0; i < pilihan.size(); i++) {
 					pesanan = list[pilih][2];
-					if (pilihan.get(i).nama == pesanan) {
+					if (pilihan.get(i).nama.equals(pesanan)) {						
 						idn = i;
 						break;
 					} else {
@@ -97,10 +97,10 @@ public class menu implements receipt {
 		} while (opsi == 'N' || opsi == 'N');
 	}
 
-	public void addDrink() {
-		int idn = -1;
+	public void addDrink() {		
 		String pesanan = "";
 		do {
+			int idn = -1;
 			printArray(list2);
 			System.out.print("Pesan Minuman Nomor = ");
 			pilih = scan.nextInt() - 1;
@@ -145,10 +145,10 @@ public class menu implements receipt {
 		} while (opsi == 'N' || opsi == 'N');
 	}
 
-	public void addPacket() {
-		int idn = -1;
+	public void addPacket() {		
 		String pesanan = "";
 		do {
+			int idn = -1;
 			printArray(list3);
 			System.out.print("Pesan Paket Nomor = ");
 			pilih = scan.nextInt() - 1;
