@@ -50,7 +50,7 @@ public class menu implements receipt {
 	}
 
 	public void addFood() {
-		int idn=-1;
+		int idn = -1;
 		String pesanan = "";
 		do {
 			printArray(list);
@@ -64,27 +64,27 @@ public class menu implements receipt {
 			if (pilihan.size() == 0 && !pesanan.equals(list[pilih][2])) {
 				System.out.print("Jumlah Pesanan = ");
 				jumlah = scan.nextInt();
-				menu s1 = new menu(nama, harga2, jumlah);
-				pilihan.add(s1);
+				menu list_pesanan = new menu(nama, harga2, jumlah);
+				pilihan.add(list_pesanan);
 				total = total + (harga * jumlah);
 			} else {
 				for (int i = 0; i < pilihan.size(); i++) {
 					pesanan = list[pilih][2];
-					if (pilihan.get(i).nama==pesanan) {
-						idn=i;				
+					if (pilihan.get(i).nama == pesanan) {
+						idn = i;
 						break;
 					} else {
 						continue;
-					}					
+					}
 				}
 				System.out.print("Jumlah Pesanan = ");
-				jumlah = scan.nextInt();				
-				if (idn>=0) {
+				jumlah = scan.nextInt();
+				if (idn >= 0) {
 					pilihan.get(idn).jumlah += jumlah;
 					total = total + (harga * jumlah);
 				} else {
-					menu s1 = new menu(nama, harga2, jumlah);
-					pilihan.add(s1);
+					menu list_pesanan = new menu(nama, harga2, jumlah);
+					pilihan.add(list_pesanan);
 					total = total + (harga * jumlah);
 				}
 				pesanan = "";
@@ -98,7 +98,7 @@ public class menu implements receipt {
 	}
 
 	public void addDrink() {
-		int idn=-1;
+		int idn = -1;
 		String pesanan = "";
 		do {
 			printArray(list2);
@@ -112,27 +112,27 @@ public class menu implements receipt {
 			if (pilihan.size() == 0 && !pesanan.equals(list2[pilih][2])) {
 				System.out.print("Jumlah Pesanan = ");
 				jumlah = scan.nextInt();
-				menu s1 = new menu(nama, harga2, jumlah);
-				pilihan.add(s1);
+				menu list_pesanan = new menu(nama, harga2, jumlah);
+				pilihan.add(list_pesanan);
 				total = total + (harga * jumlah);
 			} else {
 				for (int i = 0; i < pilihan.size(); i++) {
 					pesanan = list2[pilih][2];
-					if (pilihan.get(i).nama==pesanan) {
-						idn=i;				
+					if (pilihan.get(i).nama == pesanan) {
+						idn = i;
 						break;
 					} else {
 						continue;
-					}					
+					}
 				}
 				System.out.print("Jumlah Pesanan = ");
-				jumlah = scan.nextInt();				
-				if (idn>=0) {
+				jumlah = scan.nextInt();
+				if (idn >= 0) {
 					pilihan.get(idn).jumlah += jumlah;
 					total = total + (harga * jumlah);
 				} else {
-					menu s1 = new menu(nama, harga2, jumlah);
-					pilihan.add(s1);
+					menu list_pesanan = new menu(nama, harga2, jumlah);
+					pilihan.add(list_pesanan);
 					total = total + (harga * jumlah);
 				}
 				pesanan = "";
@@ -146,7 +146,7 @@ public class menu implements receipt {
 	}
 
 	public void addPacket() {
-		int idn=-1;
+		int idn = -1;
 		String pesanan = "";
 		do {
 			printArray(list3);
@@ -160,28 +160,27 @@ public class menu implements receipt {
 			if (pilihan.size() == 0 && !pesanan.equals(list3[pilih][1] + " - " + list3[pilih][2])) {
 				System.out.print("Jumlah Pesanan = ");
 				jumlah = scan.nextInt();
-				menu s1 = new menu(nama, harga2, jumlah);
-				pilihan.add(s1);
+				menu list_pesanan = new menu(nama, harga2, jumlah);
+				pilihan.add(list_pesanan);
 				total = total + (harga * jumlah);
 			} else {
 				for (int i = 0; i < pilihan.size(); i++) {
 					pesanan = list3[pilih][1] + " - " + list3[pilih][2];
 					if (pilihan.get(i).nama.equals(pesanan)) {
-						
-						idn=i;				
+						idn = i;
 						break;
 					} else {
 						continue;
-					}					
-				}				
+					}
+				}
 				System.out.print("Jumlah Pesanan = ");
-				jumlah = scan.nextInt();				
-				if (idn>=0) {
+				jumlah = scan.nextInt();
+				if (idn >= 0) {
 					pilihan.get(idn).jumlah += jumlah;
 					total = total + (harga * jumlah);
 				} else {
-					menu s1 = new menu(nama, harga2, jumlah);
-					pilihan.add(s1);
+					menu list_pesanan = new menu(nama, harga2, jumlah);
+					pilihan.add(list_pesanan);
 					total = total + (harga * jumlah);
 				}
 				pesanan = "";
@@ -215,7 +214,7 @@ public class menu implements receipt {
 
 	}
 
-	public void Delete() {
+	public void delete() {
 		int b = pilihan.size();
 		if (b == 0) {
 			System.out.println("Pesanan masih Kosong");
@@ -231,7 +230,7 @@ public class menu implements receipt {
 
 	@Override
 	public void receiptpembayaran() {
-
+		int pay,change;
 		char opsi2;
 		System.out.print("Apakah pesanan sudah selesai? Y/N");
 		System.out.println("");
@@ -243,7 +242,7 @@ public class menu implements receipt {
 			if (b == 0) {
 				System.out.println("Pesanan masih kosong");
 			} else {
-				DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
+				DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("E, dd-MMM-yyyy HH:mm");
 				String format = datetime.format(formatter2);
 				System.out.println(format);
 				System.out.println("");
@@ -255,8 +254,20 @@ public class menu implements receipt {
 				System.out.println("Subtotal = " + total);
 				System.out.println("Harga PPN = " + ppn);
 				System.out.println("Total Harga = " + Integer.valueOf((total + ppn)));
-				pilihan.clear();
-				total = 0;
+				System.out.println("");				
+				System.out.print("Bayar = ");
+				pay=scan.nextInt();
+				if (pay<Integer.valueOf((total + ppn))) {
+					System.out.println("Uang tidak cukup");
+				} else {	
+					change=pay-Integer.valueOf((total + ppn));
+					System.out.println("Kembalian = "+change);
+					System.out.println("Pembayaran Berhasil,Terima kasih");
+					pilihan.clear();
+					total = 0;
+					pay =0;
+				}
+				
 			}
 		}
 

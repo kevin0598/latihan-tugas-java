@@ -12,7 +12,7 @@ public class Main {
 			System.out.println("2.Tambah Minuman");
 			System.out.println("3.Tambah Paket");
 			System.out.println("4.Lihat Pesanan");
-			System.out.println("5.Hapus Pesanan");
+			System.out.println("5.Batal Pesanan");
 			System.out.println("6.Print Struck");
 			System.out.println("7.Exit");
 			System.out.print("Pilih Opsi= ");
@@ -32,7 +32,7 @@ public class Main {
 				Menu.viewDetail();
 				break;
 			case 5:
-				Menu.Delete();
+				Menu.delete();
 				break;
 			case 6:
 				Menu.receiptpembayaran();
